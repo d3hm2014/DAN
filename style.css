@@ -1,136 +1,171 @@
-/* Base Styles and Dark Theme */
+/* الألوان والمتغيرات النهائية (لوحة ألوان احترافية) */
 :root {
-    --dark-bg: #0f172a;
-    --card-bg: #1e293b;
-    --text-color: #f8fafc;
-    --accent-color: #6366f1; /* Indigo */
-    --hover-glow: rgba(99, 102, 241, 0.5);
-    --border-radius: 12px;
+    --dark-bg: #0d1117; 
+    --card-bg: #161b22; 
+    --text-color: #c9d1d9; 
+    --accent-color: #58a6ff; /* أزرق سماوي عصري كلون تباين رئيسي */
+    --link-bg: #21262d; 
+    --hover-shadow: rgba(88, 166, 255, 0.4); 
+    --border-radius-large: 16px;
 }
 
-/* Reset and Global Styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* إعدادات الجسم والخلفية - التركيز على الجوال */
 body {
     background-color: var(--dark-bg);
     color: var(--text-color);
-    font-family: 'Arial', 'Tajawal', sans-serif; /* إضافة خط عربي افتراضي */
+    font-family: 'Arial', Tahoma, sans-serif;
     display: flex;
     justify-content: center;
-    align-items: flex-start; 
+    align-items: flex-start; /* يبدأ المحتوى من الأعلى على الجوال */
     min-height: 100vh;
-    padding: 40px 20px;
+    padding: 20px 10px; /* مسافة أصغر للهواتف */
+    margin: 0;
 }
 
-/* Main Container (Card Style) */
+/* حاوية البطاقة الرئيسية */
 .container {
     width: 100%;
-    max-width: 450px; 
+    max-width: 500px;
     background-color: var(--card-bg);
-    border-radius: var(--border-radius);
-    padding: 30px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
-    text-align: center; 
+    border-radius: var(--border-radius-large);
+    padding: 25px; /* مسافة داخلية مناسبة للجوال */
+    box-shadow: 0 0 0 transparent; /* إزالة الظل على الجوال */
+    text-align: center;
+    border: 1px solid #30363d; 
 }
 
-/* Profile Section Styling */
+/* التنسيق العام للاقسام */
 .profile-section {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+}
+.bio-section {
+    margin: 20px 0 30px 0;
+    padding: 15px;
+    background-color: #1f242a;
+    border-radius: 8px;
+    border-right: 3px solid var(--accent-color); 
+    text-align: right;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #a4b4c4;
 }
 
+/* تصميم الصورة الرمزية */
 .avatar-wrapper {
-    width: 100px;
-    height: 100px;
-    background-color: var(--accent-color);
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #58a6ff, #8b949e); 
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 15px; 
-    font-size: 48px;
-    font-weight: bold;
-    color: var(--text-color);
-    border: 3px solid var(--text-color); 
+    margin: 0 auto 10px;
+    font-size: 45px;
+    font-weight: 700;
+    color: var(--dark-bg); 
+    box-shadow: 0 0 0 3px var(--link-bg), 0 0 0 5px var(--accent-color); 
+    transition: transform 0.3s ease-in-out;
+}
+.avatar-wrapper:hover {
+    transform: scale(1.1) rotate(5deg); 
 }
 
 .name {
-    font-size: 1.8rem;
-    margin-bottom: 5px;
+    font-size: 1.7rem;
+    color: #ffffff;
+    margin-bottom: 2px;
 }
-
 .subtitle {
-    font-size: 1rem;
-    color: #94a3b8; 
-    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 500;
 }
 
-/* Links Section and Buttons */
+/* قسم الروابط والأزرار */
 .links-section {
     display: flex;
     flex-direction: column;
-    gap: 15px; 
+    gap: 15px; /* مسافة مناسبة بين الأزرار على الجوال */
 }
 
 .link-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 20px;
-    background-color: #334155; 
+    padding: 14px 15px; /* حجم مناسب للمس بالإصبع */
+    background-color: var(--link-bg); 
     color: var(--text-color);
     text-decoration: none;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    
-    /* لضمان أن الأيقونة تظهر على يمين النص في سياق RTL */
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid #30363d;
     flex-direction: row-reverse; 
 }
 
-/* Icon Styling inside button */
+/* تأثير التمرير (Hover Effect) الاحترافي - رفع وتوهج */
+.link-button:hover {
+    background-color: #2c323a;
+    transform: translateY(-3px) scale(1.01); /* رفع العنصر قليلاً (تأثير الاهتزاز الخفيف) */
+    box-shadow: 0 6px 15px var(--hover-shadow); 
+    color: white; 
+}
+
+/* تنسيق الأيقونات */
 .link-button i {
     font-size: 1.1rem;
-    order: 1; /* جعل الأيقونة تظهر على اليمين */
-    margin-left: 10px; /* مسافة بين الأيقونة والنص */
-    margin-right: 0;
+    order: 1; 
+    margin-left: 12px;
+    color: var(--accent-color); 
+    transition: color 0.25s;
+}
+.link-button:hover i {
+    color: white; 
 }
 
-/* Hover Effect */
-.link-button:hover {
-    background-color: #475569; 
-    transform: translateY(-2px);
-    box-shadow: 0 0 15px var(--hover-glow); 
-    border-color: var(--accent-color);
+/* 🌟 تأثير النبض (Pulse Effect) على الرابط الرئيسي 🌟 */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--hover-shadow);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(88, 166, 255, 0); /* اختفاء الظل */
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(88, 166, 255, 0);
+    }
 }
 
-/* Specific Button Colors for subtle border hover */
-.whatsapp:hover { border-color: #25d366; }
-.instagram:hover { border-color: #E1306C; }
-.linkedin:hover { border-color: #0A66C2; }
-.website:hover { border-color: #f97316; }
+.pulse-link {
+    animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1); /* تطبيق النبض */
+    border-color: var(--accent-color); /* تمييز إطار الرابط */
+}
 
-/* Responsive Design */
-@media (max-width: 600px) {
+/* 🖥️ تحسينات شاشات سطح المكتب (أكبر من 500 بكسل) */
+@media (min-width: 501px) {
     body {
-        padding: 20px 10px;
+        align-items: center;
+        padding: 50px 15px;
     }
-
     .container {
-        padding: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8); /* ظل أعمق على الشاشات الكبيرة */
     }
-
     .name {
-        font-size: 1.5rem;
+        font-size: 2.2rem;
     }
-
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    .avatar-wrapper {
+        width: 110px;
+        height: 110px;
+        font-size: 55px;
+        box-shadow: 0 0 0 5px var(--link-bg), 0 0 0 7px var(--accent-color);
+    }
     .link-button {
-        padding: 12px 15px;
-        font-size: 0.95rem;
+        padding: 16px 20px;
+        font-size: 1.05rem;
     }
 }
