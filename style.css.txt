@@ -1,0 +1,136 @@
+/* Base Styles and Dark Theme */
+:root {
+    --dark-bg: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f8fafc;
+    --accent-color: #6366f1; /* Indigo */
+    --hover-glow: rgba(99, 102, 241, 0.5);
+    --border-radius: 12px;
+}
+
+/* Reset and Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Arial', 'Tajawal', sans-serif; /* إضافة خط عربي افتراضي */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Main Container (Card Style) */
+.container {
+    width: 100%;
+    max-width: 450px; 
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+    text-align: center; 
+}
+
+/* Profile Section Styling */
+.profile-section {
+    margin-bottom: 30px;
+}
+
+.avatar-wrapper {
+    width: 100px;
+    height: 100px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px; 
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--text-color);
+    border: 3px solid var(--text-color); 
+}
+
+.name {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #94a3b8; 
+    margin-bottom: 0;
+}
+
+/* Links Section and Buttons */
+.links-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.link-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    background-color: #334155; 
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    
+    /* لضمان أن الأيقونة تظهر على يمين النص في سياق RTL */
+    flex-direction: row-reverse; 
+}
+
+/* Icon Styling inside button */
+.link-button i {
+    font-size: 1.1rem;
+    order: 1; /* جعل الأيقونة تظهر على اليمين */
+    margin-left: 10px; /* مسافة بين الأيقونة والنص */
+    margin-right: 0;
+}
+
+/* Hover Effect */
+.link-button:hover {
+    background-color: #475569; 
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px var(--hover-glow); 
+    border-color: var(--accent-color);
+}
+
+/* Specific Button Colors for subtle border hover */
+.whatsapp:hover { border-color: #25d366; }
+.instagram:hover { border-color: #E1306C; }
+.linkedin:hover { border-color: #0A66C2; }
+.website:hover { border-color: #f97316; }
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .link-button {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+}
