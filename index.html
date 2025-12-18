@@ -1,334 +1,413 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>تسجيل مورد | شركة السعودية للأعمال والتشغيل والصناعة</title>
-  <meta name="description" content="نموذج تسجيل الموردين لدى شركة السعودية للأعمال والتشغيل والصناعة و شركات المجموعة." />
+  <title>Vendor Registration | Saudi Business, Operations & Industry Co.</title>
+  <meta name="description" content="Vendor Registration Form for Saudi Business, Operations & Industry Co. and its group companies." />
+  <meta name="robots" content="index,follow" />
 
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#0f1a30;
-      --card2:#0c1528;
-      --text:#e7eefc;
-      --muted:#a9b7d5;
-      --line:rgba(255,255,255,.10);
-      --accent:#4f8cff;
-      --accent2:#2fe0b7;
-      --danger:#ff5a6b;
-      --ok:#2fe07a;
-      --shadow: 0 18px 50px rgba(0,0,0,.35);
-      --radius:18px;
+      --bg:#ffffff;
+      --surface:#ffffff;
+      --surface-2:#f8fafc;
+      --text:#0f172a;      /* slate-900 */
+      --muted:#475569;     /* slate-600 */
+      --line:#e2e8f0;      /* slate-200 */
+      --line-2:#cbd5e1;    /* slate-300 */
+      --accent:#0f3d8a;    /* deep blue */
+      --accent-2:#0b2f6d;
+      --danger:#b42318;
+      --ok:#067647;
+      --shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+      --radius:14px;
+      --radius-sm:10px;
     }
+
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Kufi Arabic", Tahoma, Arial, sans-serif;
-      background:
-        radial-gradient(900px 600px at 15% 10%, rgba(79,140,255,.20), transparent 60%),
-        radial-gradient(800px 600px at 85% 25%, rgba(47,224,183,.14), transparent 60%),
-        radial-gradient(900px 700px at 60% 100%, rgba(255,90,107,.10), transparent 55%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.5;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
     }
-    a{color:inherit}
-    .wrap{max-width:1100px; margin:0 auto; padding:28px 18px 60px}
-    header{
-      display:flex; gap:16px; align-items:flex-start; justify-content:space-between;
-      padding:20px;
-      border:1px solid var(--line);
+
+    .container{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+
+    /* Header */
+    .header{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:flex-start;
+      padding: 18px 18px;
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      background: var(--surface);
       box-shadow: var(--shadow);
     }
     .brand{
-      display:flex; gap:14px; align-items:center;
+      display:flex;
+      gap:14px;
+      align-items:center;
+      min-width: 280px;
     }
     .logo{
-      width:52px; height:52px; border-radius:14px;
-      background: linear-gradient(135deg, rgba(79,140,255,.85), rgba(47,224,183,.75));
-      box-shadow: 0 10px 30px rgba(79,140,255,.22);
-      display:grid; place-items:center;
+      width:46px;height:46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color:#fff;
+      display:grid;
+      place-items:center;
       font-weight:800;
+      letter-spacing: .5px;
+      user-select:none;
     }
-    .hgroup h1{margin:0; font-size:20px}
-    .hgroup p{margin:6px 0 0; color:var(--muted); font-size:14px; max-width:680px}
-    .pillrow{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-start}
-    .pill{
+    .title h1{
+      margin:0;
+      font-size: 18px;
+      letter-spacing: .2px;
+    }
+    .title p{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 640px;
+    }
+    .meta{
+      display:grid;
+      gap:10px;
+      min-width: 260px;
+      align-content:start;
+    }
+    .badge{
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      padding:8px 10px;
-      border-radius:999px;
-      color:var(--muted);
-      font-size:12px;
-      white-space:nowrap;
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: var(--surface-2);
+      font-size: 12px;
+      color: var(--muted);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    .divider{
+      margin: 16px 0;
+      height:1px;
+      background: var(--line);
     }
 
-    main{display:grid; grid-template-columns: 1fr 360px; gap:16px; margin-top:16px}
-    @media (max-width: 980px){ main{grid-template-columns:1fr} }
+    /* Layout */
+    .layout{
+      display:grid;
+      grid-template-columns: 1fr 340px;
+      gap: 16px;
+      align-items:start;
+    }
+    @media (max-width: 980px){
+      .layout{grid-template-columns: 1fr;}
+      .meta{min-width:auto}
+      .header{flex-direction:column}
+    }
 
     .card{
-      border:1px solid var(--line);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      background: var(--surface);
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .card .head{
-      padding:16px 18px;
-      border-bottom:1px solid var(--line);
-      background: rgba(0,0,0,.12);
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
+    .cardhead{
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-2);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
     }
-    .card .head h2{margin:0; font-size:15px}
-    .card .head .small{color:var(--muted); font-size:12px}
-    .card .body{padding:18px}
+    .cardhead h2{
+      margin:0;
+      font-size: 14px;
+      letter-spacing:.2px;
+    }
+    .cardhead .small{
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .cardbody{
+      padding: 16px;
+    }
 
     .grid{display:grid; gap:12px}
-    .grid.two{grid-template-columns: 1fr 1fr}
-    .grid.three{grid-template-columns: 1fr 1fr 1fr}
+    .two{grid-template-columns: 1fr 1fr}
+    .three{grid-template-columns: 1fr 1fr 1fr}
     @media (max-width: 720px){
-      .grid.two,.grid.three{grid-template-columns:1fr}
+      .two,.three{grid-template-columns:1fr}
     }
 
-    label{display:block; font-size:13px; color:var(--muted); margin-bottom:6px}
+    label{
+      display:block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .req{color: var(--accent); font-weight: 700}
+
     input, select, textarea{
-      width:100%;
-      background: rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.10);
-      color:var(--text);
-      border-radius:14px;
-      padding:12px 12px;
-      outline:none;
-      transition: .15s ease;
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid var(--line-2);
+      border-radius: var(--radius-sm);
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color .15s ease, box-shadow .15s ease;
+      font-size: 14px;
     }
-    input:focus, select:focus, textarea:focus{border-color: rgba(79,140,255,.65); box-shadow: 0 0 0 4px rgba(79,140,255,.12)}
-    textarea{min-height:110px; resize:vertical}
-
-    .hint{font-size:12px; color:var(--muted); margin-top:6px}
-    .req{color: var(--accent2); font-weight:700}
-
-    .checkgrid{
-      display:grid; grid-template-columns: 1fr 1fr; gap:10px; padding:10px;
-      border:1px dashed rgba(255,255,255,.14);
-      border-radius:14px;
-      background: rgba(0,0,0,.10);
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(15, 61, 138, .55);
+      box-shadow: 0 0 0 4px rgba(15, 61, 138, .12);
     }
-    @media(max-width:720px){ .checkgrid{grid-template-columns:1fr} }
+    textarea{min-height: 110px; resize: vertical}
+
+    .hint{
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .checkboxes{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 12px;
+      border:1px dashed var(--line-2);
+      border-radius: var(--radius-sm);
+      background: #fff;
+    }
+    @media (max-width:720px){ .checkboxes{grid-template-columns:1fr} }
     .chk{
-      display:flex; gap:10px; align-items:center;
-      padding:10px; border:1px solid rgba(255,255,255,.08);
-      border-radius:14px;
-      background: rgba(255,255,255,.02);
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:10px;
+      border:1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--surface-2);
     }
-    .chk input{width:auto}
-    .row{
-      display:flex; gap:10px; align-items:center; justify-content:space-between;
-      padding:12px; border:1px solid var(--line); border-radius:14px;
-      background: rgba(0,0,0,.08);
+    .chk input{width:auto; margin-top:3px}
+
+    .note{
+      border:1px solid var(--line);
+      background: var(--surface-2);
+      color: var(--muted);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      font-size: 13px;
     }
 
     .actions{
-      display:flex; gap:10px; flex-wrap:wrap;
-      justify-content:flex-start; align-items:center;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-start;
     }
     .btn{
-      appearance:none; border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color:var(--text);
-      padding:12px 14px;
-      border-radius:14px;
+      appearance:none;
+      border:1px solid var(--line-2);
+      background:#fff;
+      color: var(--text);
+      padding: 11px 14px;
+      border-radius: var(--radius-sm);
       cursor:pointer;
-      transition:.15s ease;
-      font-weight:650;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight: 650;
+      font-size: 14px;
     }
-    .btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.20)}
+    .btn:hover{transform: translateY(-1px); background: var(--surface-2)}
     .btn.primary{
-      border-color: rgba(79,140,255,.55);
-      background: linear-gradient(135deg, rgba(79,140,255,.95), rgba(47,224,183,.65));
-      color:#061124;
+      border-color: rgba(15,61,138,.55);
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color:#fff;
     }
-    .btn.danger{border-color: rgba(255,90,107,.40); color:#ffd7dc}
-    .status{
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.12);
-      color:var(--muted);
-      font-size:13px;
+    .btn.primary:hover{background: linear-gradient(135deg, var(--accent-2), var(--accent))}
+    .btn.ghost{
+      background: #fff;
+      color: var(--muted);
     }
-    .status.ok{border-color: rgba(47,224,122,.45); color: rgba(196,255,220,.95)}
-    .status.bad{border-color: rgba(255,90,107,.45); color: rgba(255,214,219,.95)}
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    .btn.danger{
+      border-color: rgba(180,35,24,.35);
+      color: var(--danger);
+      background:#fff;
+    }
 
-    .sidebar .body{display:grid; gap:12px}
-    .kv{
-      padding:12px;
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:14px;
-      background: rgba(0,0,0,.10);
+    .status{
+      border:1px solid var(--line);
+      background: var(--surface-2);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-size: 13px;
+      color: var(--muted);
     }
-    .kv b{display:block; font-size:12px; color:var(--muted); margin-bottom:6px}
-    .kv span{display:block; font-size:14px}
-    .note{
-      padding:12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      color:var(--muted);
-      font-size:13px;
-    }
+    .status.ok{border-color: rgba(6,118,71,.25); color: var(--ok); background: rgba(6,118,71,.06)}
+    .status.bad{border-color: rgba(180,35,24,.25); color: var(--danger); background: rgba(180,35,24,.06)}
+
     .footer{
-      margin-top:16px;
-      color:rgba(255,255,255,.35);
-      font-size:12px;
+      margin-top: 14px;
+      color: #94a3b8;
+      font-size: 12px;
       text-align:center;
     }
+
     .hidden{display:none !important;}
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <header>
+  <div class="container">
+    <div class="header">
       <div class="brand">
         <div class="logo">S</div>
-        <div class="hgroup">
-          <h1>نموذج تسجيل الموردين</h1>
+        <div class="title">
+          <h1>Vendor Registration</h1>
           <p>
-            تسجيل الموردين لدى <b>شركة السعودية للأعمال والتشغيل والصناعة</b> وشركات المجموعة (أكثر من 15 شركة)
-            عبر قطاعات: الاتصالات، الطاقة المتجددة، مبيعات الجملة، المقاولات، ومجالات الصناعة.
+            Saudi Business, Operations & Industry Co. and its group companies (15+ entities).
+            Sectors include Telecommunications, Renewable Energy, Wholesale, Contracting, and Industrial fields.
           </p>
-          <div class="pillrow" style="margin-top:10px">
-            <div class="pill">Vendor Registration</div>
-            <div class="pill">Telecom</div>
-            <div class="pill">Renewable Energy</div>
-            <div class="pill">Wholesale</div>
-            <div class="pill">Contracting</div>
-            <div class="pill">Industrial</div>
-          </div>
         </div>
       </div>
 
-      <div style="min-width:220px">
-        <div class="pill" style="margin-bottom:10px">رقم الطلب: <span id="appId" class="mono">—</span></div>
-        <div class="pill">آخر حفظ تلقائي: <span id="lastSaved">—</span></div>
+      <div class="meta">
+        <div class="badge">
+          <span>Application ID</span>
+          <span id="appId" class="mono">—</span>
+        </div>
+        <div class="badge">
+          <span>Last draft save</span>
+          <span id="lastSaved">—</span>
+        </div>
       </div>
-    </header>
+    </div>
 
-    <main>
-      <!-- FORM -->
+    <div class="divider"></div>
+
+    <div class="layout">
+      <!-- Main form -->
       <section class="card">
-        <div class="head">
-          <h2>بيانات المورد</h2>
-          <div class="small">الحقول المطلوبة عليها علامة <span class="req">*</span></div>
+        <div class="cardhead">
+          <h2>Vendor Information</h2>
+          <div class="small">Required fields are marked with <span class="req">*</span></div>
         </div>
 
-        <div class="body">
-          <!-- IMPORTANT:
-               GitHub Pages doesn't receive form submissions by itself.
-               Use Formspree: create a form and put your endpoint below.
-               Replace YOUR_FORMSPREE_ID
-          -->
+        <div class="cardbody">
           <form id="vendorForm"
-                action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+                action="https://formspree.io/f/xqezznjr"
                 method="POST"
-                enctype="multipart/form-data">
+                enctype="multipart/form-data"
+                novalidate>
 
             <!-- hidden metadata -->
             <input type="hidden" name="application_id" id="application_id" />
             <input type="hidden" name="page_source" value="GitHub Pages" />
 
-            <!-- Company Profile -->
-            <div class="card" style="background: rgba(0,0,0,.10); margin-bottom:12px">
-              <div class="head">
-                <h2>1) ملف الشركة</h2>
-                <div class="small">Company Profile</div>
+            <!-- 1) Company Profile -->
+            <div class="card" style="box-shadow:none; border-color: var(--line); margin-bottom:12px;">
+              <div class="cardhead">
+                <h2>1) Company Profile</h2>
+                <div class="small">Basic details</div>
               </div>
-              <div class="body">
+              <div class="cardbody">
                 <div class="grid two">
                   <div>
-                    <label>الاسم القانوني للشركة <span class="req">*</span></label>
-                    <input name="company_legal_name" required placeholder="مثال: مؤسسة / شركة ..." />
+                    <label>Legal Company Name <span class="req">*</span></label>
+                    <input name="company_legal_name" required placeholder="Company legal name" />
                   </div>
                   <div>
-                    <label>الاسم التجاري (اختياري)</label>
-                    <input name="trade_name" placeholder="Brand / Trade name" />
+                    <label>Trade Name (Optional)</label>
+                    <input name="trade_name" placeholder="Brand / trade name" />
                   </div>
                 </div>
 
                 <div class="grid three" style="margin-top:12px">
                   <div>
-                    <label>الدولة <span class="req">*</span></label>
+                    <label>Country <span class="req">*</span></label>
                     <input name="country" required placeholder="Saudi Arabia" />
                   </div>
                   <div>
-                    <label>المدينة <span class="req">*</span></label>
+                    <label>City <span class="req">*</span></label>
                     <input name="city" required placeholder="Riyadh" />
                   </div>
                   <div>
-                    <label>سنة التأسيس</label>
+                    <label>Year Established</label>
                     <input name="year_established" type="number" min="1900" max="2100" placeholder="2015" />
                   </div>
                 </div>
 
                 <div style="margin-top:12px">
-                  <label>رابط المصنع / المتجر / الموقع <span class="req">*</span></label>
+                  <label>Company Website / Factory Link <span class="req">*</span></label>
                   <input name="website_or_factory_link" required type="url" placeholder="https://..." />
-                  <div class="hint">لو ما عندك موقع، حط رابط خرائط Google أو LinkedIn أو كتالوج PDF.</div>
+                  <div class="hint">If no website is available, provide a Google Maps link or company profile link.</div>
                 </div>
 
                 <div style="margin-top:12px">
-                  <label>النشاط الرئيسي <span class="req">*</span></label>
-                  <input name="main_activity" required placeholder="مثال: مقاولات كهرباء / توريد معدات اتصالات ..." />
+                  <label>Main Business Activity <span class="req">*</span></label>
+                  <input name="main_activity" required placeholder="e.g., Telecom supplies, EPC contractor, industrial manufacturer..." />
                 </div>
 
                 <div style="margin-top:12px">
-                  <label>القطاعات التي يمكنك التوريد لها <span class="req">*</span></label>
-                  <div class="checkgrid" id="sectorsGrid">
-                    <label class="chk"><input type="checkbox" name="sectors[]" value="Telecommunications"> الاتصالات (Telecommunications)</label>
-                    <label class="chk"><input type="checkbox" name="sectors[]" value="Renewable Energy"> الطاقة المتجددة (Renewable Energy)</label>
-                    <label class="chk"><input type="checkbox" name="sectors[]" value="Wholesale / Distribution"> مبيعات الجملة (Wholesale)</label>
-                    <label class="chk"><input type="checkbox" name="sectors[]" value="Contracting"> المقاولات (Contracting)</label>
-                    <label class="chk"><input type="checkbox" name="sectors[]" value="Industrial / Manufacturing"> الصناعة (Industrial)</label>
-                    <label class="chk"><input type="checkbox" id="sectorOtherChk"> أخرى</label>
+                  <label>Sectors you can supply to <span class="req">*</span></label>
+                  <div class="checkboxes" id="sectorsGrid">
+                    <label class="chk"><input type="checkbox" name="sectors[]" value="Telecommunications"> Telecommunications</label>
+                    <label class="chk"><input type="checkbox" name="sectors[]" value="Renewable Energy"> Renewable Energy</label>
+                    <label class="chk"><input type="checkbox" name="sectors[]" value="Wholesale / Distribution"> Wholesale / Distribution</label>
+                    <label class="chk"><input type="checkbox" name="sectors[]" value="Contracting"> Contracting</label>
+                    <label class="chk"><input type="checkbox" name="sectors[]" value="Industrial / Manufacturing"> Industrial / Manufacturing</label>
+                    <label class="chk"><input type="checkbox" id="sectorOtherChk"> Other</label>
                   </div>
 
                   <div id="sectorOtherWrap" class="hidden" style="margin-top:10px">
-                    <label>اذكر القطاع الآخر</label>
-                    <input name="sector_other" placeholder="اكتب القطاع..." />
+                    <label>Other Sector <span class="req">*</span></label>
+                    <input name="sector_other" placeholder="Please specify" />
                   </div>
 
-                  <div class="hint">اختر على الأقل قطاع واحد.</div>
+                  <div class="hint">Select at least one sector.</div>
                 </div>
               </div>
             </div>
 
-            <!-- Products / Services -->
-            <div class="card" style="background: rgba(0,0,0,.10); margin-bottom:12px">
-              <div class="head">
-                <h2>2) المنتجات / الخدمات</h2>
-                <div class="small">Products / Services</div>
+            <!-- 2) Products / Services -->
+            <div class="card" style="box-shadow:none; border-color: var(--line); margin-bottom:12px;">
+              <div class="cardhead">
+                <h2>2) Products / Services</h2>
+                <div class="small">Capabilities</div>
               </div>
-              <div class="body">
+              <div class="cardbody">
                 <div class="grid two">
                   <div>
-                    <label>نوع المورد <span class="req">*</span></label>
+                    <label>Vendor Type <span class="req">*</span></label>
                     <select name="vendor_type" required>
-                      <option value="" selected disabled>اختر</option>
-                      <option>مصنع (Manufacturer)</option>
-                      <option>موزع (Distributor)</option>
-                      <option>مقدم خدمة (Service Provider)</option>
-                      <option>مقاول (Contractor)</option>
-                      <option>آخر (Other)</option>
+                      <option value="" selected disabled>Select</option>
+                      <option>Manufacturer</option>
+                      <option>Distributor</option>
+                      <option>Service Provider</option>
+                      <option>Contractor</option>
+                      <option>Other</option>
                     </select>
                   </div>
                   <div>
-                    <label>الفئة (Category)</label>
+                    <label>Category (Optional)</label>
                     <select name="category">
-                      <option value="" selected>اختر (اختياري)</option>
+                      <option value="" selected>Optional</option>
                       <option>Telecom Equipment</option>
                       <option>Solar / PV</option>
                       <option>Electrical</option>
@@ -341,128 +420,128 @@
                 </div>
 
                 <div style="margin-top:12px">
-                  <label>وصف مختصر لما تقدمه <span class="req">*</span></label>
-                  <textarea name="offering_description" required placeholder="اكتب وصف واضح ومختصر..."></textarea>
+                  <label>Short Description of Offering <span class="req">*</span></label>
+                  <textarea name="offering_description" required placeholder="Describe your products/services clearly..."></textarea>
                 </div>
 
                 <div class="grid three" style="margin-top:12px">
                   <div>
-                    <label>مدة التوريد المعتادة</label>
+                    <label>Typical Lead Time (Optional)</label>
                     <select name="typical_lead_time">
-                      <option value="" selected>اختياري</option>
-                      <option>1-3 days</option>
-                      <option>4-7 days</option>
-                      <option>1-2 weeks</option>
-                      <option>3-4 weeks</option>
+                      <option value="" selected>Optional</option>
+                      <option>1–3 days</option>
+                      <option>4–7 days</option>
+                      <option>1–2 weeks</option>
+                      <option>3–4 weeks</option>
                       <option>4+ weeks</option>
                     </select>
                   </div>
                   <div>
-                    <label>الطاقة / القدرة (Capacity)</label>
-                    <input name="capacity" placeholder="مثال: 5000 وحدة/شهر" />
+                    <label>Capacity (Optional)</label>
+                    <input name="capacity" placeholder="e.g., 5,000 units/month" />
                   </div>
                   <div>
-                    <label>الحد الأدنى للطلب (MOQ)</label>
-                    <input name="moq" placeholder="مثال: 100" />
+                    <label>MOQ (Optional)</label>
+                    <input name="moq" placeholder="e.g., 100" />
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Compliance & Docs -->
-            <div class="card" style="background: rgba(0,0,0,.10); margin-bottom:12px">
-              <div class="head">
-                <h2>3) المستندات والامتثال</h2>
-                <div class="small">Compliance & Documents</div>
+            <!-- 3) Compliance & Documents -->
+            <div class="card" style="box-shadow:none; border-color: var(--line); margin-bottom:12px;">
+              <div class="cardhead">
+                <h2>3) Compliance & Documents</h2>
+                <div class="small">Official documents</div>
               </div>
-              <div class="body">
+              <div class="cardbody">
                 <div class="note">
-                  على GitHub Pages: رفع الملفات داخل النموذج قد لا يعمل بدون منصة تستقبلها (مثل Netlify).
-                  الحل المضمون: ارفع ملفاتك على Google Drive/OneDrive وأدخل روابطها هنا.
+                  For GitHub Pages deployments, file uploads may depend on your Formspree plan/settings.
+                  The most reliable approach is to provide document links (Google Drive / OneDrive).
                 </div>
 
                 <div class="grid two" style="margin-top:12px">
                   <div>
-                    <label>رابط السجل التجاري / الملف التعريفي <span class="req">*</span></label>
+                    <label>Commercial Registration / Company Profile Link <span class="req">*</span></label>
                     <input name="documents_link_cr_profile" required type="url" placeholder="https://drive.google.com/..." />
-                    <div class="hint">ارفع ملف CR + Company Profile في مجلد واحد وشارك الرابط.</div>
+                    <div class="hint">Upload CR + company profile in one folder and share the link.</div>
                   </div>
                   <div>
-                    <label>رابط الشهادات (ISO / SASO / IEC ...)</label>
+                    <label>Certificates Link (Optional)</label>
                     <input name="documents_link_certificates" type="url" placeholder="https://..." />
                   </div>
                 </div>
 
                 <div class="grid two" style="margin-top:12px">
                   <div>
-                    <label>رفع السجل التجاري (اختياري/لـ Netlify)</label>
+                    <label>Upload CR (Optional)</label>
                     <input name="upload_cr" type="file" accept=".pdf,.jpg,.jpeg,.png" />
                   </div>
                   <div>
-                    <label>رفع شهادات الجودة (اختياري/لـ Netlify)</label>
+                    <label>Upload Certificates (Optional)</label>
                     <input name="upload_certificates" type="file" multiple accept=".pdf,.jpg,.jpeg,.png" />
                   </div>
                 </div>
 
                 <div style="margin-top:12px">
-                  <label class="chk" style="display:flex;align-items:center;gap:10px">
+                  <label class="chk" style="align-items:center">
                     <input type="checkbox" name="declaration" required />
-                    أقر أن جميع المعلومات المقدمة صحيحة وأنني مخوّل بالتسجيل نيابة عن الشركة <span class="req">*</span>
+                    I confirm that the provided information is accurate and I am authorized to submit this registration. <span class="req">*</span>
                   </label>
                 </div>
               </div>
             </div>
 
-            <!-- Contacts -->
-            <div class="card" style="background: rgba(0,0,0,.10); margin-bottom:12px">
-              <div class="head">
-                <h2>4) بيانات التواصل (شخصين)</h2>
-                <div class="small">Contacts (Two)</div>
+            <!-- 4) Contacts -->
+            <div class="card" style="box-shadow:none; border-color: var(--line); margin-bottom:12px;">
+              <div class="cardhead">
+                <h2>4) Contacts (Two)</h2>
+                <div class="small">Primary & Secondary</div>
               </div>
-              <div class="body">
+              <div class="cardbody">
                 <div class="grid two">
-                  <div class="kv">
-                    <b>جهة التواصل الأولى (Primary)</b>
-                    <div class="grid" style="margin-top:10px">
+                  <div class="note" style="background:#fff; border-color: var(--line-2)">
+                    <b style="display:block; margin-bottom:10px; color: var(--text);">Primary Contact</b>
+                    <div class="grid">
                       <div>
-                        <label>الاسم <span class="req">*</span></label>
+                        <label>Name <span class="req">*</span></label>
                         <input name="contact1_name" required />
                       </div>
                       <div>
-                        <label>المنصب</label>
+                        <label>Title (Optional)</label>
                         <input name="contact1_title" />
                       </div>
                       <div class="grid two">
                         <div>
-                          <label>الجوال <span class="req">*</span></label>
+                          <label>Mobile <span class="req">*</span></label>
                           <input name="contact1_mobile" required placeholder="+966..." />
                         </div>
                         <div>
-                          <label>الإيميل <span class="req">*</span></label>
+                          <label>Email <span class="req">*</span></label>
                           <input name="contact1_email" required type="email" placeholder="name@company.com" />
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="kv">
-                    <b>جهة التواصل الثانية (Secondary)</b>
-                    <div class="grid" style="margin-top:10px">
+                  <div class="note" style="background:#fff; border-color: var(--line-2)">
+                    <b style="display:block; margin-bottom:10px; color: var(--text);">Secondary Contact</b>
+                    <div class="grid">
                       <div>
-                        <label>الاسم <span class="req">*</span></label>
+                        <label>Name <span class="req">*</span></label>
                         <input name="contact2_name" required />
                       </div>
                       <div>
-                        <label>المنصب</label>
+                        <label>Title (Optional)</label>
                         <input name="contact2_title" />
                       </div>
                       <div class="grid two">
                         <div>
-                          <label>الجوال <span class="req">*</span></label>
+                          <label>Mobile <span class="req">*</span></label>
                           <input name="contact2_mobile" required placeholder="+966..." />
                         </div>
                         <div>
-                          <label>الإيميل <span class="req">*</span></label>
+                          <label>Email <span class="req">*</span></label>
                           <input name="contact2_email" required type="email" placeholder="name@company.com" />
                         </div>
                       </div>
@@ -471,55 +550,56 @@
                 </div>
 
                 <div style="margin-top:12px">
-                  <label>ملاحظات إضافية</label>
-                  <textarea name="notes" placeholder="أي تفاصيل إضافية..."></textarea>
+                  <label>Additional Notes (Optional)</label>
+                  <textarea name="notes" placeholder="Any additional information..."></textarea>
                 </div>
               </div>
             </div>
 
             <!-- Submit -->
-            <div class="row">
+            <div class="grid" style="gap:10px">
               <div class="actions">
-                <button type="submit" class="btn primary">إرسال الطلب</button>
-                <button type="button" id="saveBtn" class="btn">حفظ كمسودة</button>
-                <button type="button" id="clearBtn" class="btn danger">مسح البيانات</button>
+                <button type="submit" class="btn primary">Submit Registration</button>
+                <button type="button" id="saveBtn" class="btn ghost">Save Draft</button>
+                <button type="button" id="clearBtn" class="btn danger">Clear</button>
+                <div id="formStatus" class="status">Ready</div>
               </div>
-              <div id="formStatus" class="status">جاهز</div>
-            </div>
-
-            <div class="hint" style="margin-top:10px">
-              سيتم إرسال البيانات إلى بريد/لوحة Formspree المرتبطة. إن لم يتم الاتصال بكم فهذا لا يعني رفضًا؛ فقط لم يتم الاحتياج حاليًا.
+              <div class="hint">
+                Submitting this form does not guarantee onboarding. Applications are reviewed based on compliance and capability.
+              </div>
             </div>
 
           </form>
         </div>
       </section>
 
-      <!-- SIDEBAR -->
-      <aside class="card sidebar">
-        <div class="head">
-          <h2>معلومات سريعة</h2>
-          <div class="small">Quick Info</div>
+      <!-- Sidebar -->
+      <aside class="card">
+        <div class="cardhead">
+          <h2>Guidance</h2>
+          <div class="small">Before submitting</div>
         </div>
-        <div class="body">
-          <div class="kv">
-            <b>سياسة المراجعة</b>
-            <span>كل الطلبات تُراجع حسب الامتثال والقدرة.</span>
-          </div>
-          <div class="kv">
-            <b>أفضل ممارسة للملفات</b>
-            <span>ضع روابط Drive/OneDrive بدل رفع مباشر (على GitHub Pages).</span>
-          </div>
-          <div class="kv">
-            <b>تلميح</b>
-            <span>اجمع (CR + Profile + Certificates) في مجلد واحد وشارك الرابط.</span>
-          </div>
+        <div class="cardbody">
           <div class="note">
-            إذا تبغى رفع ملفات فعلي داخل النموذج: انقل نفس الصفحة إلى Netlify Forms، أو استخدم خدمة تدعم file upload.
+            <b style="color:var(--text); display:block; margin-bottom:8px;">Recommended documents</b>
+            • Commercial Registration (CR)<br/>
+            • Company Profile (PDF)<br/>
+            • VAT Certificate (if applicable)<br/>
+            • Quality / product certificates (ISO, SASO, IEC, etc.)
+          </div>
+
+          <div class="note" style="margin-top:12px;">
+            <b style="color:var(--text); display:block; margin-bottom:8px;">Best practice</b>
+            Upload all documents to one folder (Drive/OneDrive) and paste the shared link in the form.
+          </div>
+
+          <div class="note" style="margin-top:12px;">
+            <b style="color:var(--text); display:block; margin-bottom:8px;">Privacy</b>
+            Information is used for vendor evaluation purposes only.
           </div>
         </div>
       </aside>
-    </main>
+    </div>
 
     <div class="footer">© <span id="year"></span> Saudi Business, Operations & Industry Co. — Vendor Registration</div>
   </div>
@@ -538,11 +618,10 @@
     const saveBtn = document.getElementById('saveBtn');
     const clearBtn = document.getElementById('clearBtn');
 
-    const DRAFT_KEY = "vendor_registration_draft_v1";
+    const DRAFT_KEY = "sboi_vendor_registration_draft_v1";
 
     function nowStr(){
-      const d = new Date();
-      return d.toLocaleString('ar-SA');
+      return new Date().toLocaleString(undefined, { year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' });
     }
 
     function makeAppId(){
@@ -566,7 +645,7 @@
       const data = {};
       const fd = new FormData(frm);
       for (const [k,v] of fd.entries()){
-        if (v instanceof File) continue; // لا نخزن ملفات في LocalStorage
+        if (v instanceof File) continue; // don't store files
         if (k.endsWith('[]')){
           data[k] = data[k] || [];
           data[k].push(v);
@@ -574,15 +653,17 @@
           data[k] = v;
         }
       }
+      // handle Other sector checkbox which has no name
+      data.__otherSectorChecked = sectorOtherChk.checked;
       return data;
     }
 
     function fillForm(frm, data){
       for (const [k,v] of Object.entries(data)){
+        if (k === "__otherSectorChecked") continue;
+
         if (Array.isArray(v)){
-          // checkboxes array
-          const name = k;
-          const boxes = frm.querySelectorAll(`input[name="${name}"]`);
+          const boxes = frm.querySelectorAll(`input[name="${k}"]`);
           boxes.forEach(b => b.checked = v.includes(b.value));
         } else {
           const el = frm.querySelector(`[name="${CSS.escape(k)}"]`);
@@ -591,15 +672,60 @@
           else el.value = v;
         }
       }
+      // restore other sector state
+      if (data.__otherSectorChecked){
+        sectorOtherChk.checked = true;
+        sectorOtherWrap.classList.remove('hidden');
+      }
     }
 
     function hasAtLeastOneSector(){
       const selected = form.querySelectorAll('input[name="sectors[]"]:checked');
-      const other = sectorOtherChk.checked;
-      return selected.length > 0 || other;
+      return selected.length > 0 || sectorOtherChk.checked;
     }
 
-    // init
+    function validateField(el){
+      if (!el) return true;
+
+      // native required check
+      if (el.hasAttribute('required')){
+        const val = (el.value || '').trim();
+        if (el.type === 'checkbox') return el.checked;
+        if (!val) return false;
+      }
+
+      // url/email basic checks
+      if (el.type === 'url' && el.value){
+        try { new URL(el.value); } catch { return false; }
+      }
+      if (el.type === 'email' && el.value){
+        const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
+        if (!ok) return false;
+      }
+      return true;
+    }
+
+    function firstInvalidElement(){
+      // check required inputs/selects/textareas
+      const fields = form.querySelectorAll('input,select,textarea');
+      for (const el of fields){
+        if (!validateField(el)){
+          return el;
+        }
+      }
+      // sectors special rule
+      if (!hasAtLeastOneSector()){
+        return document.getElementById('sectorsGrid');
+      }
+      // if other sector checked require text
+      if (sectorOtherChk.checked){
+        const other = form.querySelector('[name="sector_other"]');
+        if (!other.value || other.value.trim().length < 2) return other;
+      }
+      return null;
+    }
+
+    // Init
     yearEl.textContent = new Date().getFullYear();
     const appId = makeAppId();
     appIdEl.textContent = appId;
@@ -609,25 +735,18 @@
       sectorOtherWrap.classList.toggle('hidden', !sectorOtherChk.checked);
     });
 
-    // load draft
+    // Load draft if exists
     try{
-      const draftRaw = localStorage.getItem(DRAFT_KEY);
-      if(draftRaw){
-        const draft = JSON.parse(draftRaw);
+      const raw = localStorage.getItem(DRAFT_KEY);
+      if(raw){
+        const draft = JSON.parse(raw);
         fillForm(form, draft);
-        setStatus('ok', 'تم استرجاع مسودة محفوظة');
-        lastSavedEl.textContent = 'موجودة';
-        // if other sector text present
-        if(draft.sector_other && String(draft.sector_other).trim().length > 0){
-          sectorOtherChk.checked = true;
-          sectorOtherWrap.classList.remove('hidden');
-        }
-      } else {
-        lastSavedEl.textContent = '—';
+        setStatus('ok', 'Draft restored');
+        lastSavedEl.textContent = 'Available';
       }
-    }catch(e){}
+    } catch {}
 
-    // auto save
+    // Auto-save draft
     let saveTimer = null;
     form.addEventListener('input', () => {
       clearTimeout(saveTimer);
@@ -636,53 +755,52 @@
           const draft = serializeForm(form);
           localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
           lastSavedEl.textContent = nowStr();
-          setStatus('ok', 'تم حفظ المسودة تلقائيًا');
-        }catch(e){}
+          setStatus('ok', 'Draft saved');
+        } catch {}
       }, 600);
     });
 
+    // Save draft button
     saveBtn.addEventListener('click', () => {
       try{
         const draft = serializeForm(form);
         localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
         lastSavedEl.textContent = nowStr();
-        setStatus('ok', 'تم حفظ المسودة');
-      }catch(e){
-        setStatus('bad', 'تعذر الحفظ');
+        setStatus('ok', 'Draft saved');
+      } catch {
+        setStatus('bad', 'Draft save failed');
       }
     });
 
+    // Clear
     clearBtn.addEventListener('click', () => {
-      if(!confirm('متأكد تبغى تمسح كل البيانات؟')) return;
+      if(!confirm('Clear all entered data?')) return;
       form.reset();
       sectorOtherWrap.classList.add('hidden');
       sectorOtherChk.checked = false;
       localStorage.removeItem(DRAFT_KEY);
       lastSavedEl.textContent = '—';
-      setStatus('ok', 'تم مسح البيانات');
+      setStatus('ok', 'Cleared');
+      // new application id
+      const newId = makeAppId();
+      appIdEl.textContent = newId;
+      applicationIdInput.value = newId;
     });
 
-    // submit with validation + async submit
+    // Submit
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      if(!hasAtLeastOneSector()){
-        setStatus('bad', 'اختر قطاع واحد على الأقل');
-        document.getElementById('sectorsGrid').scrollIntoView({behavior:'smooth', block:'center'});
+      const invalid = firstInvalidElement();
+      if(invalid){
+        setStatus('bad', 'Please complete required fields correctly');
+        if (invalid.scrollIntoView) invalid.scrollIntoView({behavior:'smooth', block:'center'});
+        if (invalid.focus) invalid.focus({preventScroll:true});
         return;
       }
 
-      // If other sector checked, require text
-      if(sectorOtherChk.checked){
-        const otherText = (form.querySelector('[name="sector_other"]').value || '').trim();
-        if(otherText.length < 2){
-          setStatus('bad', 'اذكر القطاع الآخر');
-          sectorOtherWrap.scrollIntoView({behavior:'smooth', block:'center'});
-          return;
-        }
-      }
+      setStatus('', 'Submitting...');
 
-      setStatus('', 'جاري الإرسال...');
       const fd = new FormData(form);
 
       try{
@@ -694,7 +812,9 @@
 
         if(res.ok){
           localStorage.removeItem(DRAFT_KEY);
-          setStatus('ok', 'تم إرسال الطلب بنجاح ✅');
+          setStatus('ok', 'Submitted successfully');
+          alert('Thank you. Your registration has been submitted successfully.');
+
           form.reset();
           sectorOtherWrap.classList.add('hidden');
           sectorOtherChk.checked = false;
@@ -705,12 +825,11 @@
           appIdEl.textContent = newId;
           applicationIdInput.value = newId;
 
-          alert('تم إرسال طلب التسجيل بنجاح. سنقوم بالمراجعة والتواصل عند الحاجة.');
         } else {
-          setStatus('bad', 'فشل الإرسال. تحقق من إعداد Formspree أو الاتصال.');
+          setStatus('bad', 'Submission failed. Please verify Formspree settings.');
         }
-      } catch (err){
-        setStatus('bad', 'تعذر الإرسال (قد يكون بسبب Formspree أو الشبكة).');
+      } catch {
+        setStatus('bad', 'Submission failed due to network/Formspree issue.');
       }
     });
   </script>
