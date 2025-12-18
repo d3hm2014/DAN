@@ -187,7 +187,6 @@
       color: var(--muted);
       margin-bottom: 6px;
     }
-    .req{color: var(--accent); font-weight: 700}
 
     input, select, textarea{
       width: 100%;
@@ -315,7 +314,7 @@
         </select>
       </div>
       <div class="note" id="topNote" style="margin:0; padding:10px 12px;">
-        Submitting this form does not guarantee onboarding. Applications are reviewed based on compliance and capability.
+        All fields are optional.
       </div>
     </div>
 
@@ -352,7 +351,7 @@
       <section class="card">
         <div class="cardhead">
           <h2 id="formTitle">Vendor Information</h2>
-          <div class="small" id="requiredNote">Required fields are marked with <span class="req">*</span></div>
+          <div class="small" id="requiredNote"></div>
         </div>
 
         <div class="cardbody">
@@ -374,8 +373,8 @@
               <div class="cardbody">
                 <div class="grid two">
                   <div>
-                    <label id="lblLegal">Legal Company Name <span class="req">*</span></label>
-                    <input id="company_legal_name" name="company_legal_name" required placeholder="Company legal name" />
+                    <label id="lblLegal">Legal Company Name</label>
+                    <input id="company_legal_name" name="company_legal_name" placeholder="Company legal name" />
                   </div>
                   <div>
                     <label id="lblTrade">Trade Name (Optional)</label>
@@ -385,12 +384,12 @@
 
                 <div class="grid three" style="margin-top:12px">
                   <div>
-                    <label id="lblCountry">Country <span class="req">*</span></label>
-                    <input id="country" name="country" required placeholder="Saudi Arabia" />
+                    <label id="lblCountry">Country</label>
+                    <input id="country" name="country" placeholder="Saudi Arabia" />
                   </div>
                   <div>
-                    <label id="lblCity">City <span class="req">*</span></label>
-                    <input id="city" name="city" required placeholder="Riyadh" />
+                    <label id="lblCity">City</label>
+                    <input id="city" name="city" placeholder="Riyadh" />
                   </div>
                   <div>
                     <label id="lblYear">Year Established</label>
@@ -399,18 +398,18 @@
                 </div>
 
                 <div style="margin-top:12px">
-                  <label id="lblWebsite">Company Website / Factory Link <span class="req">*</span></label>
-                  <input id="website_or_factory_link" name="website_or_factory_link" required type="url" placeholder="https://..." />
+                  <label id="lblWebsite">Company Website / Factory Link</label>
+                  <input id="website_or_factory_link" name="website_or_factory_link" type="url" placeholder="https://..." />
                   <div class="hint" id="hintWebsite">If no website is available, provide a Google Maps link or company profile link.</div>
                 </div>
 
                 <div style="margin-top:12px">
-                  <label id="lblActivity">Main Business Activity <span class="req">*</span></label>
-                  <input id="main_activity" name="main_activity" required placeholder="e.g., telecom supplies, EPC contractor, manufacturer..." />
+                  <label id="lblActivity">Main Business Activity</label>
+                  <input id="main_activity" name="main_activity" placeholder="e.g., telecom supplies, EPC contractor, manufacturer..." />
                 </div>
 
                 <div style="margin-top:12px">
-                  <label id="lblSectors">Sectors you can supply to <span class="req">*</span></label>
+                  <label id="lblSectors">Sectors you can supply to (Optional)</label>
                   <div class="checkboxes" id="sectorsGrid">
                     <label class="chk"><input type="checkbox" name="sectors[]" value="Telecommunications"> <span id="secTelecom">Telecommunications</span></label>
                     <label class="chk"><input type="checkbox" name="sectors[]" value="Renewable Energy"> <span id="secRenew">Renewable Energy</span></label>
@@ -421,11 +420,11 @@
                   </div>
 
                   <div id="sectorOtherWrap" class="hidden" style="margin-top:10px">
-                    <label id="lblOtherSector">Other Sector <span class="req">*</span></label>
+                    <label id="lblOtherSector">Other Sector (Optional)</label>
                     <input id="sector_other" name="sector_other" placeholder="Please specify" />
                   </div>
 
-                  <div class="hint" id="hintSectors">Select at least one sector.</div>
+                  <div class="hint" id="hintSectors">All fields are optional.</div>
                 </div>
               </div>
             </div>
@@ -439,9 +438,9 @@
               <div class="cardbody">
                 <div class="grid two">
                   <div>
-                    <label id="lblVendorType">Vendor Type <span class="req">*</span></label>
-                    <select id="vendor_type" name="vendor_type" required>
-                      <option value="" selected disabled id="optSelect">Select</option>
+                    <label id="lblVendorType">Vendor Type (Optional)</label>
+                    <select id="vendor_type" name="vendor_type">
+                      <option value="" selected id="optSelect">Select</option>
                       <option value="Manufacturer" id="optMan">Manufacturer</option>
                       <option value="Distributor" id="optDis">Distributor</option>
                       <option value="Service Provider" id="optServ">Service Provider</option>
@@ -465,8 +464,8 @@
                 </div>
 
                 <div style="margin-top:12px">
-                  <label id="lblDesc">Short Description of Offering <span class="req">*</span></label>
-                  <textarea id="offering_description" name="offering_description" required placeholder="Describe your products/services clearly..."></textarea>
+                  <label id="lblDesc">Short Description of Offering (Optional)</label>
+                  <textarea id="offering_description" name="offering_description" placeholder="Describe your products/services clearly..."></textarea>
                 </div>
 
                 <div class="grid three" style="margin-top:12px">
@@ -507,8 +506,8 @@
 
                 <div class="grid two" style="margin-top:12px">
                   <div>
-                    <label id="lblDocs1">CR / Company Profile Link <span class="req">*</span></label>
-                    <input id="documents_link_cr_profile" name="documents_link_cr_profile" required type="url" placeholder="https://drive.google.com/..." />
+                    <label id="lblDocs1">CR / Company Profile Link (Optional)</label>
+                    <input id="documents_link_cr_profile" name="documents_link_cr_profile" type="url" placeholder="https://drive.google.com/..." />
                     <div class="hint" id="hintDocs">Upload CR + company profile in one folder and share the link.</div>
                   </div>
                   <div>
@@ -530,9 +529,8 @@
 
                 <div style="margin-top:12px">
                   <label class="chk" style="align-items:center">
-                    <input id="declaration" type="checkbox" name="declaration" required />
-                    <span id="declText">I confirm that the provided information is accurate and I am authorized to submit this registration.</span>
-                    <span class="req">*</span>
+                    <input id="declaration" type="checkbox" name="declaration" />
+                    <span id="declText">I confirm that the provided information is accurate and I am authorized to submit this registration. (Optional)</span>
                   </label>
                 </div>
               </div>
@@ -550,8 +548,8 @@
                     <b id="primaryTitle" style="display:block; margin-bottom:10px; color: var(--text);">Primary Contact</b>
                     <div class="grid">
                       <div>
-                        <label id="lblC1Name">Name <span class="req">*</span></label>
-                        <input id="contact1_name" name="contact1_name" required />
+                        <label id="lblC1Name">Name (Optional)</label>
+                        <input id="contact1_name" name="contact1_name" />
                       </div>
                       <div>
                         <label id="lblC1Title">Title (Optional)</label>
@@ -559,12 +557,12 @@
                       </div>
                       <div class="grid two">
                         <div>
-                          <label id="lblC1Mobile">Mobile <span class="req">*</span></label>
-                          <input id="contact1_mobile" name="contact1_mobile" required placeholder="+966..." />
+                          <label id="lblC1Mobile">Mobile (Optional)</label>
+                          <input id="contact1_mobile" name="contact1_mobile" placeholder="+966..." />
                         </div>
                         <div>
-                          <label id="lblC1Email">Email <span class="req">*</span></label>
-                          <input id="contact1_email" name="contact1_email" required type="email" placeholder="name@company.com" />
+                          <label id="lblC1Email">Email (Optional)</label>
+                          <input id="contact1_email" name="contact1_email" type="email" placeholder="name@company.com" />
                         </div>
                       </div>
                     </div>
@@ -574,8 +572,8 @@
                     <b id="secondaryTitle" style="display:block; margin-bottom:10px; color: var(--text);">Secondary Contact</b>
                     <div class="grid">
                       <div>
-                        <label id="lblC2Name">Name <span class="req">*</span></label>
-                        <input id="contact2_name" name="contact2_name" required />
+                        <label id="lblC2Name">Name (Optional)</label>
+                        <input id="contact2_name" name="contact2_name" />
                       </div>
                       <div>
                         <label id="lblC2Title">Title (Optional)</label>
@@ -583,12 +581,12 @@
                       </div>
                       <div class="grid two">
                         <div>
-                          <label id="lblC2Mobile">Mobile <span class="req">*</span></label>
-                          <input id="contact2_mobile" name="contact2_mobile" required placeholder="+966..." />
+                          <label id="lblC2Mobile">Mobile (Optional)</label>
+                          <input id="contact2_mobile" name="contact2_mobile" placeholder="+966..." />
                         </div>
                         <div>
-                          <label id="lblC2Email">Email <span class="req">*</span></label>
-                          <input id="contact2_email" name="contact2_email" required type="email" placeholder="name@company.com" />
+                          <label id="lblC2Email">Email (Optional)</label>
+                          <input id="contact2_email" name="contact2_email" type="email" placeholder="name@company.com" />
                         </div>
                       </div>
                     </div>
@@ -610,9 +608,7 @@
                 <button id="clearBtn" type="button" class="btn danger">Clear</button>
                 <div id="formStatus" class="status">Ready</div>
               </div>
-              <div class="hint" id="submitHint">
-                Submitting this form does not guarantee onboarding. Applications are reviewed based on compliance and capability.
-              </div>
+              <div class="hint" id="submitHint">All fields are optional.</div>
             </div>
 
           </form>
@@ -658,61 +654,60 @@
       en: {
         htmlLang: "en", dir: "ltr",
         langLabel: "Language",
-        topNote: "Submitting this form does not guarantee onboarding. Applications are reviewed based on compliance and capability.",
+        topNote: "All fields are optional.",
         pageTitle: "Vendor Registration",
         pageSubtitle: "Saudi Business, Operations & Industry Co. and its group companies (15+ entities) across Telecom, Renewable Energy, Wholesale, Contracting, and Industrial fields.",
         appIdLabel: "Application ID",
         lastSavedLabel: "Last draft save",
         formTitle: "Vendor Information",
-        requiredNote: 'Required fields are marked with <span class="req">*</span>',
+        requiredNote: "",
         sec1Title: "1) Company Profile", sec1Small: "Basic details",
-        lblLegal: 'Legal Company Name <span class="req">*</span>',
-        phLegal: "Company legal name",
+        lblLegal: "Legal Company Name", phLegal: "Company legal name",
         lblTrade: "Trade Name (Optional)", phTrade: "Brand / trade name",
-        lblCountry: 'Country <span class="req">*</span>', phCountry: "Saudi Arabia",
-        lblCity: 'City <span class="req">*</span>', phCity: "Riyadh",
+        lblCountry: "Country", phCountry: "Saudi Arabia",
+        lblCity: "City", phCity: "Riyadh",
         lblYear: "Year Established", phYear: "2015",
-        lblWebsite: 'Company Website / Factory Link <span class="req">*</span>', phWebsite: "https://...",
+        lblWebsite: "Company Website / Factory Link", phWebsite: "https://...",
         hintWebsite: "If no website is available, provide a Google Maps link or company profile link.",
-        lblActivity: 'Main Business Activity <span class="req">*</span>', phActivity: "e.g., telecom supplies, EPC contractor, manufacturer...",
-        lblSectors: 'Sectors you can supply to <span class="req">*</span>',
+        lblActivity: "Main Business Activity", phActivity: "e.g., telecom supplies, EPC contractor, manufacturer...",
+        lblSectors: "Sectors you can supply to (Optional)",
         secTelecom:"Telecommunications", secRenew:"Renewable Energy", secWholesale:"Wholesale / Distribution", secContract:"Contracting", secIndustrial:"Industrial / Manufacturing", secOther:"Other",
-        lblOtherSector: 'Other Sector <span class="req">*</span>', phOtherSector:"Please specify",
-        hintSectors:"Select at least one sector.",
+        lblOtherSector: "Other Sector (Optional)", phOtherSector:"Please specify",
+        hintSectors:"All fields are optional.",
 
         sec2Title:"2) Products / Services", sec2Small:"Capabilities",
-        lblVendorType: 'Vendor Type <span class="req">*</span>',
+        lblVendorType: "Vendor Type (Optional)",
         optSelect:"Select",
         optMan:"Manufacturer", optDis:"Distributor", optServ:"Service Provider", optCont:"Contractor", optOther:"Other",
         lblCategory:"Category (Optional)", catOptional:"Optional",
-        lblDesc: 'Short Description of Offering <span class="req">*</span>', phDesc:"Describe your products/services clearly...",
+        lblDesc: "Short Description of Offering (Optional)", phDesc:"Describe your products/services clearly...",
         lblLead:"Typical Lead Time (Optional)", leadOptional:"Optional",
         lblCapacity:"Capacity (Optional)", phCapacity:"e.g., 5,000 units/month",
         lblMOQ:"MOQ (Optional)", phMOQ:"e.g., 100",
 
         sec3Title:"3) Compliance & Documents", sec3Small:"Official documents",
         docNote:"For GitHub Pages deployments, file uploads may depend on your Formspree plan/settings. The most reliable approach is to provide document links (Google Drive / OneDrive).",
-        lblDocs1:'CR / Company Profile Link <span class="req">*</span>', phDocs1:"https://drive.google.com/...",
+        lblDocs1:"CR / Company Profile Link (Optional)", phDocs1:"https://drive.google.com/...",
         hintDocs:"Upload CR + company profile in one folder and share the link.",
         lblDocs2:"Certificates Link (Optional)", phDocs2:"https://...",
         lblUploadCR:"Upload CR (Optional)",
         lblUploadCert:"Upload Certificates (Optional)",
-        declText:"I confirm that the provided information is accurate and I am authorized to submit this registration.",
+        declText:"I confirm that the provided information is accurate and I am authorized to submit this registration. (Optional)",
 
         sec4Title:"4) Contacts (Two)", sec4Small:"Primary & Secondary",
         primaryTitle:"Primary Contact", secondaryTitle:"Secondary Contact",
-        lblC1Name:'Name <span class="req">*</span>', lblC1Title:"Title (Optional)",
-        lblC1Mobile:'Mobile <span class="req">*</span>', phMobile:"+966...",
-        lblC1Email:'Email <span class="req">*</span>', phEmail:"name@company.com",
-        lblC2Name:'Name <span class="req">*</span>', lblC2Title:"Title (Optional)",
-        lblC2Mobile:'Mobile <span class="req">*</span>', lblC2Email:'Email <span class="req">*</span>',
+        lblC1Name:"Name (Optional)", lblC1Title:"Title (Optional)",
+        lblC1Mobile:"Mobile (Optional)", phMobile:"+966...",
+        lblC1Email:"Email (Optional)", phEmail:"name@company.com",
+        lblC2Name:"Name (Optional)", lblC2Title:"Title (Optional)",
+        lblC2Mobile:"Mobile (Optional)", lblC2Email:"Email (Optional)",
         lblNotes:"Additional Notes (Optional)", phNotes:"Any additional information...",
 
         submitBtn:"Submit Registration",
         saveBtn:"Save Draft",
         clearBtn:"Clear",
         statusReady:"Ready",
-        submitHint:"Submitting this form does not guarantee onboarding. Applications are reviewed based on compliance and capability.",
+        submitHint:"All fields are optional.",
 
         sideTitle:"Guidance", sideSmall:"Before submitting",
         recDocsTitle:"Recommended documents",
@@ -723,13 +718,11 @@
         privacyText:"Information is used for vendor evaluation purposes only.",
         footerText:"Saudi Business, Operations & Industry Co. — Vendor Registration",
 
-        // status
         statusDraftRestored:"Draft restored",
         statusDraftSaved:"Draft saved",
         statusDraftFailed:"Draft save failed",
         statusCleared:"Cleared",
         statusSubmitting:"Submitting...",
-        statusInvalid:"Please complete required fields correctly",
         statusSuccess:"Submitted successfully",
         statusFail:"Submission failed. Please verify Formspree settings.",
         statusNetFail:"Submission failed due to network/Formspree issue.",
@@ -740,61 +733,61 @@
       ar: {
         htmlLang: "ar", dir: "rtl",
         langLabel: "اللغة",
-        topNote: "إرسال النموذج لا يعني اعتمادك كمورد. يتم تقييم الطلبات وفق الامتثال والقدرة التشغيلية.",
+        topNote: "جميع الحقول اختيارية.",
         pageTitle: "تسجيل مورد",
         pageSubtitle: "شركة السعودية للأعمال والتشغيل والصناعة وشركات المجموعة (أكثر من 15 شركة) عبر قطاعات متعددة: الاتصالات، الطاقة المتجددة، الجملة، المقاولات، والصناعة.",
         appIdLabel: "رقم الطلب",
         lastSavedLabel: "آخر حفظ للمسودة",
         formTitle: "بيانات المورد",
-        requiredNote: 'الحقول المطلوبة عليها <span class="req">*</span>',
+        requiredNote: "",
         sec1Title: "1) ملف الشركة", sec1Small: "البيانات الأساسية",
-        lblLegal: 'الاسم القانوني للشركة <span class="req">*</span>',
-        phLegal: "اسم الشركة القانوني",
+        lblLegal: "الاسم القانوني للشركة", phLegal: "اسم الشركة القانوني",
         lblTrade: "الاسم التجاري (اختياري)", phTrade: "الاسم التجاري",
-        lblCountry: 'الدولة <span class="req">*</span>', phCountry: "المملكة العربية السعودية",
-        lblCity: 'المدينة <span class="req">*</span>', phCity: "الرياض",
+        lblCountry: "الدولة", phCountry: "المملكة العربية السعودية",
+        lblCity: "المدينة", phCity: "الرياض",
         lblYear: "سنة التأسيس", phYear: "2015",
-        lblWebsite: 'رابط الموقع / المصنع <span class="req">*</span>', phWebsite: "https://...",
+        lblWebsite: "رابط الموقع / المصنع", phWebsite: "https://...",
         hintWebsite: "إذا لا يوجد موقع، ضع رابط خرائط Google أو ملف تعريفي للشركة.",
-        lblActivity: 'النشاط الرئيسي <span class="req">*</span>', phActivity: "مثال: توريد اتصالات، مقاول، مصنع...",
-        lblSectors: 'القطاعات التي يمكنك التوريد لها <span class="req">*</span>',
+        lblActivity: "النشاط الرئيسي", phActivity: "مثال: توريد اتصالات، مقاول، مصنع...",
+        lblSectors: "القطاعات التي يمكنك التوريد لها (اختياري)",
         secTelecom:"الاتصالات", secRenew:"الطاقة المتجددة", secWholesale:"الجملة/التوزيع", secContract:"المقاولات", secIndustrial:"الصناعة/التصنيع", secOther:"أخرى",
-        lblOtherSector: 'اذكر القطاع الآخر <span class="req">*</span>', phOtherSector:"اكتب القطاع",
-        hintSectors:"اختر قطاع واحد على الأقل.",
+        lblOtherSector: "اذكر القطاع الآخر (اختياري)", phOtherSector:"اكتب القطاع",
+        hintSectors:"جميع الحقول اختيارية.",
 
         sec2Title:"2) المنتجات / الخدمات", sec2Small:"القدرات",
-        lblVendorType: 'نوع المورد <span class="req">*</span>',
+        lblVendorType: "نوع المورد (اختياري)",
         optSelect:"اختر",
         optMan:"مصنع", optDis:"موزع", optServ:"مقدم خدمة", optCont:"مقاول", optOther:"آخر",
         lblCategory:"الفئة (اختياري)", catOptional:"اختياري",
-        lblDesc: 'وصف مختصر لما تقدمه <span class="req">*</span>', phDesc:"اكتب وصف واضح ومختصر...",
+        lblDesc: "وصف مختصر لما تقدمه (اختياري)", phDesc:"اكتب وصف واضح ومختصر...",
         lblLead:"مدة التوريد المعتادة (اختياري)", leadOptional:"اختياري",
         lblCapacity:"القدرة (اختياري)", phCapacity:"مثال: 5000 وحدة/شهر",
         lblMOQ:"الحد الأدنى للطلب MOQ (اختياري)", phMOQ:"مثال: 100",
 
         sec3Title:"3) الامتثال والمستندات", sec3Small:"مستندات رسمية",
         docNote:"على GitHub Pages قد يعتمد رفع الملفات على خطة/إعداد Formspree. الحل الأضمن: روابط المستندات (Drive/OneDrive).",
-        lblDocs1:'رابط السجل التجاري / الملف التعريفي <span class="req">*</span>', phDocs1:"https://drive.google.com/...",
+        lblDocs1:"رابط السجل التجاري / الملف التعريفي (اختياري)", phDocs1:"https://drive.google.com/...",
         hintDocs:"ارفع السجل التجاري وملف الشركة في مجلد واحد وشارك الرابط.",
         lblDocs2:"رابط الشهادات (اختياري)", phDocs2:"https://...",
         lblUploadCR:"رفع السجل التجاري (اختياري)",
         lblUploadCert:"رفع الشهادات (اختياري)",
-        declText:"أقر بصحة البيانات وأنني مخوّل بالتقديم نيابة عن الشركة.",
+        declText:"أقر بصحة البيانات وأنني مخوّل بالتقديم نيابة عن الشركة. (اختياري)",
 
         sec4Title:"4) بيانات التواصل (شخصين)", sec4Small:"أساسي واحتياطي",
         primaryTitle:"جهة التواصل الأولى", secondaryTitle:"جهة التواصل الثانية",
-        lblC1Name:'الاسم <span class="req">*</span>', lblC1Title:"المنصب (اختياري)",
-        lblC1Mobile:'الجوال <span class="req">*</span>', phMobile:"+966...",
-        lblC1Email:'الإيميل <span class="req">*</span>', phEmail:"name@company.com",
-        lblC2Name:'الاسم <span class="req">*</span>', lblC2Title:"المنصب (اختياري)",
-        lblC2Mobile:'الجوال <span class="req">*</span>', lblC2Email:'الإيميل <span class="req">*</span>',
+        lblC1Name:"الاسم (اختياري)", lblC1Title:"المنصب (اختياري)",
+        lblC1Mobile:"الجوال (اختياري)", phMobile:"+966...",
+        lblC1Email:"الإيميل (اختياري)", phEmail:"name@company.com",
+        lblC2Name:"الاسم (اختياري)", lblC2Title:"المنصب (اختياري)",
+        lblC2Mobile:"الجوال (اختياري)", lblC2Email:"الإيميل (اختياري)",
         lblNotes:"ملاحظات إضافية (اختياري)", phNotes:"أي معلومات إضافية...",
 
         submitBtn:"إرسال الطلب",
         saveBtn:"حفظ مسودة",
         clearBtn:"مسح",
         statusReady:"جاهز",
-        submitHint:"إرسال النموذج لا يعني الاعتماد. يتم تقييم الطلبات وفق الامتثال والقدرة.",
+        submitHint:"جميع الحقول اختيارية.",
+
         sideTitle:"إرشادات", sideSmall:"قبل الإرسال",
         recDocsTitle:"مستندات مقترحة",
         recDocsList:"• السجل التجاري<br/>• ملف تعريفي (PDF)<br/>• شهادة ضريبة (إن وجدت)<br/>• شهادات الجودة/المنتج (ISO, SASO, IEC...)",
@@ -809,7 +802,6 @@
         statusDraftFailed:"فشل حفظ المسودة",
         statusCleared:"تم المسح",
         statusSubmitting:"جاري الإرسال...",
-        statusInvalid:"أكمل الحقول المطلوبة بشكل صحيح",
         statusSuccess:"تم الإرسال بنجاح",
         statusFail:"فشل الإرسال. تحقق من إعدادات Formspree.",
         statusNetFail:"تعذر الإرسال بسبب الشبكة/‏Formspree.",
@@ -820,61 +812,61 @@
       zh: {
         htmlLang: "zh-CN", dir: "ltr",
         langLabel: "语言",
-        topNote: "提交此表单不代表已通过供应商准入。我们将基于合规与能力进行审核。",
+        topNote: "所有字段均为可选。",
         pageTitle: "供应商注册",
         pageSubtitle: "Saudi Business, Operations & Industry Co. 及其集团公司（15+ 子公司），覆盖通信、可再生能源、批发、承包与工业领域。",
         appIdLabel: "申请编号",
         lastSavedLabel: "草稿保存时间",
         formTitle: "供应商信息",
-        requiredNote: '带 <span class="req">*</span> 为必填项',
+        requiredNote: "",
         sec1Title: "1) 公司资料", sec1Small: "基本信息",
-        lblLegal: '公司法定名称 <span class="req">*</span>',
-        phLegal: "公司法定名称",
+        lblLegal: "公司法定名称", phLegal: "公司法定名称",
         lblTrade: "商号（可选）", phTrade: "品牌/商号",
-        lblCountry: '国家 <span class="req">*</span>', phCountry: "Saudi Arabia",
-        lblCity: '城市 <span class="req">*</span>', phCity: "Riyadh",
+        lblCountry: "国家", phCountry: "Saudi Arabia",
+        lblCity: "城市", phCity: "Riyadh",
         lblYear: "成立年份", phYear: "2015",
-        lblWebsite: '公司网站 / 工厂链接 <span class="req">*</span>', phWebsite: "https://...",
+        lblWebsite: "公司网站 / 工厂链接", phWebsite: "https://...",
         hintWebsite: "如无官网吗，请提供谷歌地图链接或公司资料链接。",
-        lblActivity: '主营业务 <span class="req">*</span>', phActivity: "例如：通信供应、EPC 承包、制造商...",
-        lblSectors: '可供货行业 <span class="req">*</span>',
+        lblActivity: "主营业务", phActivity: "例如：通信供应、EPC 承包、制造商...",
+        lblSectors: "可供货行业（可选）",
         secTelecom:"通信", secRenew:"可再生能源", secWholesale:"批发/分销", secContract:"承包", secIndustrial:"工业/制造", secOther:"其他",
-        lblOtherSector: '其他行业 <span class="req">*</span>', phOtherSector:"请注明",
-        hintSectors:"至少选择一个行业。",
+        lblOtherSector: "其他行业（可选）", phOtherSector:"请注明",
+        hintSectors:"所有字段均为可选。",
 
         sec2Title:"2) 产品 / 服务", sec2Small:"能力信息",
-        lblVendorType: '供应商类型 <span class="req">*</span>',
+        lblVendorType: "供应商类型（可选）",
         optSelect:"请选择",
         optMan:"制造商", optDis:"经销商", optServ:"服务商", optCont:"承包商", optOther:"其他",
         lblCategory:"类别（可选）", catOptional:"可选",
-        lblDesc: '供货/服务简述 <span class="req">*</span>', phDesc:"请清晰描述您的产品/服务...",
+        lblDesc: "供货/服务简述（可选）", phDesc:"请清晰描述您的产品/服务...",
         lblLead:"交付周期（可选）", leadOptional:"可选",
         lblCapacity:"产能（可选）", phCapacity:"例如：5,000 件/月",
         lblMOQ:"最小起订量 MOQ（可选）", phMOQ:"例如：100",
 
         sec3Title:"3) 合规与文件", sec3Small:"官方文件",
         docNote:"GitHub Pages 环境下文件上传可能依赖 Formspree 套餐/设置。最可靠方式是提供文件链接（Drive/OneDrive）。",
-        lblDocs1:'营业/公司资料链接 <span class="req">*</span>', phDocs1:"https://drive.google.com/...",
+        lblDocs1:"营业/公司资料链接（可选）", phDocs1:"https://drive.google.com/...",
         hintDocs:"请将营业文件与公司资料放在同一文件夹并分享链接。",
         lblDocs2:"证书链接（可选）", phDocs2:"https://...",
         lblUploadCR:"上传营业文件（可选）",
         lblUploadCert:"上传证书（可选）",
-        declText:"我确认所填信息真实准确，并有权代表公司提交。",
+        declText:"我确认所填信息真实准确，并有权代表公司提交。（可选）",
 
         sec4Title:"4) 联系人（两位）", sec4Small:"主要与备用",
         primaryTitle:"主要联系人", secondaryTitle:"备用联系人",
-        lblC1Name:'姓名 <span class="req">*</span>', lblC1Title:"职位（可选）",
-        lblC1Mobile:'手机 <span class="req">*</span>', phMobile:"+966...",
-        lblC1Email:'邮箱 <span class="req">*</span>', phEmail:"name@company.com",
-        lblC2Name:'姓名 <span class="req">*</span>', lblC2Title:"职位（可选）",
-        lblC2Mobile:'手机 <span class="req">*</span>', lblC2Email:'邮箱 <span class="req">*</span>',
+        lblC1Name:"姓名（可选）", lblC1Title:"职位（可选）",
+        lblC1Mobile:"手机（可选）", phMobile:"+966...",
+        lblC1Email:"邮箱（可选）", phEmail:"name@company.com",
+        lblC2Name:"姓名（可选）", lblC2Title:"职位（可选）",
+        lblC2Mobile:"手机（可选）", lblC2Email:"邮箱（可选）",
         lblNotes:"补充说明（可选）", phNotes:"任何补充信息...",
 
         submitBtn:"提交注册",
         saveBtn:"保存草稿",
         clearBtn:"清空",
         statusReady:"就绪",
-        submitHint:"提交不代表准入通过。我们将基于合规与能力审核。",
+        submitHint:"所有字段均为可选。",
+
         sideTitle:"提示", sideSmall:"提交前",
         recDocsTitle:"建议文件",
         recDocsList:"• 营业/注册文件<br/>• 公司简介（PDF）<br/>• 增值税文件（如适用）<br/>• 质量/产品证书（ISO, SASO, IEC 等）",
@@ -889,7 +881,6 @@
         statusDraftFailed:"草稿保存失败",
         statusCleared:"已清空",
         statusSubmitting:"提交中…",
-        statusInvalid:"请正确填写必填项",
         statusSuccess:"提交成功",
         statusFail:"提交失败，请检查 Formspree 设置。",
         statusNetFail:"网络/Formspree 原因导致提交失败。",
@@ -900,7 +891,6 @@
 
     // ---------- helpers ----------
     const $ = (id) => document.getElementById(id);
-
     function setText(id, text){ $(id).textContent = text; }
     function setHTML(id, html){ $(id).innerHTML = html; }
     function setPlaceholder(id, ph){ $(id).setAttribute("placeholder", ph); }
@@ -918,12 +908,11 @@
     const clearBtn = $("clearBtn");
     const langSelect = $("langSelect");
 
-    const DRAFT_KEY = "sboi_vendor_registration_draft_v2";
+    const DRAFT_KEY = "sboi_vendor_registration_draft_v3";
     const LANG_KEY = "sboi_vendor_lang_v1";
 
-    function nowStr(){
-      return new Date().toLocaleString();
-    }
+    function nowStr(){ return new Date().toLocaleString(); }
+
     function makeAppId(){
       const d = new Date();
       const y = d.getFullYear();
@@ -932,6 +921,7 @@
       const rnd = Math.random().toString(16).slice(2,6).toUpperCase();
       return `SBOI-${y}${m}${day}-${rnd}`;
     }
+
     function setStatus(type, msg){
       statusEl.classList.remove('ok','bad');
       if(type === 'ok') statusEl.classList.add('ok');
@@ -954,6 +944,7 @@
       data.__otherSectorChecked = sectorOtherChk.checked;
       return data;
     }
+
     function fillForm(frm, data){
       for (const [k,v] of Object.entries(data)){
         if (k === "__otherSectorChecked") continue;
@@ -974,42 +965,8 @@
       }
     }
 
-    function hasAtLeastOneSector(){
-      const selected = form.querySelectorAll('input[name="sectors[]"]:checked');
-      return selected.length > 0 || sectorOtherChk.checked;
-    }
-
-    function validateField(el){
-      if (!el) return true;
-
-      if (el.hasAttribute('required')){
-        const val = (el.value || '').trim();
-        if (el.type === 'checkbox') return el.checked;
-        if (!val) return false;
-      }
-
-      if (el.type === 'url' && el.value){
-        try { new URL(el.value); } catch { return false; }
-      }
-      if (el.type === 'email' && el.value){
-        const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
-        if (!ok) return false;
-      }
-      return true;
-    }
-
-    function firstInvalidElement(){
-      const fields = form.querySelectorAll('input,select,textarea');
-      for (const el of fields){
-        if (!validateField(el)) return el;
-      }
-      if (!hasAtLeastOneSector()) return $("sectorsGrid");
-      if (sectorOtherChk.checked){
-        const other = $("sector_other");
-        if (!other.value || other.value.trim().length < 2) return other;
-      }
-      return null;
-    }
+    // ✅ Everything optional: no validation blockers
+    function firstInvalidElement(){ return null; }
 
     function applyLanguage(lang){
       const t = I18N[lang] || I18N.en;
@@ -1017,94 +974,89 @@
       document.documentElement.lang = t.htmlLang;
       document.documentElement.dir = t.dir;
 
-      // top
       setText("langLabel", t.langLabel);
       setText("topNote", t.topNote);
 
-      // header
       setText("pageTitle", t.pageTitle);
       setText("pageSubtitle", t.pageSubtitle);
       setText("appIdLabel", t.appIdLabel);
       setText("lastSavedLabel", t.lastSavedLabel);
 
-      // form headings
       setText("formTitle", t.formTitle);
       setHTML("requiredNote", t.requiredNote);
 
-      // section 1
       setText("sec1Title", t.sec1Title);
       setText("sec1Small", t.sec1Small);
-      setHTML("lblLegal", t.lblLegal); setPlaceholder("company_legal_name", t.phLegal);
+      setText("lblLegal", t.lblLegal); setPlaceholder("company_legal_name", t.phLegal);
       setText("lblTrade", t.lblTrade); setPlaceholder("trade_name", t.phTrade);
-      setHTML("lblCountry", t.lblCountry); setPlaceholder("country", t.phCountry);
-      setHTML("lblCity", t.lblCity); setPlaceholder("city", t.phCity);
+      setText("lblCountry", t.lblCountry); setPlaceholder("country", t.phCountry);
+      setText("lblCity", t.lblCity); setPlaceholder("city", t.phCity);
       setText("lblYear", t.lblYear); setPlaceholder("year_established", t.phYear);
-      setHTML("lblWebsite", t.lblWebsite); setPlaceholder("website_or_factory_link", t.phWebsite);
+      setText("lblWebsite", t.lblWebsite); setPlaceholder("website_or_factory_link", t.phWebsite);
       setText("hintWebsite", t.hintWebsite);
-      setHTML("lblActivity", t.lblActivity); setPlaceholder("main_activity", t.phActivity);
-      setHTML("lblSectors", t.lblSectors);
+      setText("lblActivity", t.lblActivity); setPlaceholder("main_activity", t.phActivity);
+      setText("lblSectors", t.lblSectors);
+
       setText("secTelecom", t.secTelecom);
       setText("secRenew", t.secRenew);
       setText("secWholesale", t.secWholesale);
       setText("secContract", t.secContract);
       setText("secIndustrial", t.secIndustrial);
       setText("secOther", t.secOther);
-      setHTML("lblOtherSector", t.lblOtherSector); setPlaceholder("sector_other", t.phOtherSector);
+
+      setText("lblOtherSector", t.lblOtherSector); setPlaceholder("sector_other", t.phOtherSector);
       setText("hintSectors", t.hintSectors);
 
-      // section 2
       setText("sec2Title", t.sec2Title);
       setText("sec2Small", t.sec2Small);
-      setHTML("lblVendorType", t.lblVendorType);
+      setText("lblVendorType", t.lblVendorType);
+
       $("optSelect").textContent = t.optSelect;
       $("optMan").textContent = t.optMan;
       $("optDis").textContent = t.optDis;
       $("optServ").textContent = t.optServ;
       $("optCont").textContent = t.optCont;
       $("optOther").textContent = t.optOther;
+
       setText("lblCategory", t.lblCategory);
       $("catOptional").textContent = t.catOptional;
-      setHTML("lblDesc", t.lblDesc); setPlaceholder("offering_description", t.phDesc);
+      setText("lblDesc", t.lblDesc); setPlaceholder("offering_description", t.phDesc);
       setText("lblLead", t.lblLead); $("leadOptional").textContent = t.leadOptional;
       setText("lblCapacity", t.lblCapacity); setPlaceholder("capacity", t.phCapacity);
       setText("lblMOQ", t.lblMOQ); setPlaceholder("moq", t.phMOQ);
 
-      // section 3
       setText("sec3Title", t.sec3Title);
       setText("sec3Small", t.sec3Small);
       setText("docNote", t.docNote);
-      setHTML("lblDocs1", t.lblDocs1); setPlaceholder("documents_link_cr_profile", t.phDocs1);
+      setText("lblDocs1", t.lblDocs1); setPlaceholder("documents_link_cr_profile", t.phDocs1);
       setText("hintDocs", t.hintDocs);
       setText("lblDocs2", t.lblDocs2); setPlaceholder("documents_link_certificates", t.phDocs2);
       setText("lblUploadCR", t.lblUploadCR);
       setText("lblUploadCert", t.lblUploadCert);
       setText("declText", t.declText);
 
-      // section 4
       setText("sec4Title", t.sec4Title);
       setText("sec4Small", t.sec4Small);
       setText("primaryTitle", t.primaryTitle);
       setText("secondaryTitle", t.secondaryTitle);
-      setHTML("lblC1Name", t.lblC1Name);
+
+      setText("lblC1Name", t.lblC1Name);
       setText("lblC1Title", t.lblC1Title);
-      setHTML("lblC1Mobile", t.lblC1Mobile); setPlaceholder("contact1_mobile", t.phMobile);
-      setHTML("lblC1Email", t.lblC1Email); setPlaceholder("contact1_email", t.phEmail);
-      setHTML("lblC2Name", t.lblC2Name);
+      setText("lblC1Mobile", t.lblC1Mobile); setPlaceholder("contact1_mobile", t.phMobile);
+      setText("lblC1Email", t.lblC1Email); setPlaceholder("contact1_email", t.phEmail);
+
+      setText("lblC2Name", t.lblC2Name);
       setText("lblC2Title", t.lblC2Title);
-      setHTML("lblC2Mobile", t.lblC2Mobile); setPlaceholder("contact2_mobile", t.phMobile);
-      setHTML("lblC2Email", t.lblC2Email); setPlaceholder("contact2_email", t.phEmail);
+      setText("lblC2Mobile", t.lblC2Mobile); setPlaceholder("contact2_mobile", t.phMobile);
+      setText("lblC2Email", t.lblC2Email); setPlaceholder("contact2_email", t.phEmail);
+
       setText("lblNotes", t.lblNotes); setPlaceholder("notes", t.phNotes);
 
-      // buttons & status
       setText("submitBtn", t.submitBtn);
       setText("saveBtn", t.saveBtn);
       setText("clearBtn", t.clearBtn);
       setText("submitHint", t.submitHint);
-      if (statusEl.textContent === "Ready" || statusEl.textContent === "جاهز" || statusEl.textContent === "就绪") {
-        setStatus("", t.statusReady);
-      }
 
-      // sidebar
       setText("sideTitle", t.sideTitle);
       setText("sideSmall", t.sideSmall);
       setText("recDocsTitle", t.recDocsTitle);
@@ -1114,10 +1066,8 @@
       setText("privacyTitle", t.privacyTitle);
       setText("privacyText", t.privacyText);
 
-      // footer
       setText("footerText", t.footerText);
 
-      // persist
       localStorage.setItem(LANG_KEY, lang);
     }
 
@@ -1137,9 +1087,7 @@
     langSelect.value = savedLang;
     applyLanguage(savedLang);
 
-    langSelect.addEventListener("change", () => {
-      applyLanguage(langSelect.value);
-    });
+    langSelect.addEventListener("change", () => applyLanguage(langSelect.value));
 
     // Load draft
     try{
@@ -1202,14 +1150,6 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const t = I18N[langSelect.value] || I18N.en;
-
-      const invalid = firstInvalidElement();
-      if(invalid){
-        setStatus('bad', t.statusInvalid);
-        if (invalid.scrollIntoView) invalid.scrollIntoView({behavior:'smooth', block:'center'});
-        if (invalid.focus) invalid.focus({preventScroll:true});
-        return;
-      }
 
       setStatus('', t.statusSubmitting);
 
